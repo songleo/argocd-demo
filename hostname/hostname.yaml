@@ -35,7 +35,7 @@ metadata:
   labels:
     app: hostname
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: hostname
