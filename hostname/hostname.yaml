@@ -47,6 +47,7 @@ spec:
       containers:
       - name: hostname
         image: quay.io/songleo/hostname
+        imagePullPolicy: Always
         env:
         - name: VERSION
           value: "v1.2"
