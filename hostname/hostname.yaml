@@ -19,7 +19,7 @@ spec:
         image: quay.io/songleo/hostname
         env:
         - name: VERSION
-          value: "v1.2"
+          value: "v1.0"
         ports:
         - containerPort: 8080
 ---
