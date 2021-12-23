@@ -27,6 +27,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: hostname
+  labels:
+    app: hostname
 spec:
   selector:
     app: hostname
@@ -34,3 +36,19 @@ spec:
     - protocol: TCP
       port: 8080
       targetPort: 8080
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: hostname
+  labels:
+    app: hostname
+spec:
+  host: hostname-default.apps.demo-aws-495-hdgv2.demo.red-chesterfield.com
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: hostname
+    weight: 100
+  wildcardPolicy: None
