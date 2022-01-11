@@ -4,21 +4,21 @@ cat << EOF > demo.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo1234
+  name: ssli
   labels:
-    app: demo1234
+    app: ssli
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: demo1234
+      app: ssli
   template:
     metadata:
       labels:
-        app: demo1234
+        app: ssli
     spec:
       containers:
-      - name: demo1234
+      - name: ssli
         image: quay.io/songleo/hostname
         imagePullPolicy: Always
         env:
