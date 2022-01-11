@@ -1,24 +1,24 @@
 #!/bin/sh
 
-cat << EOF > demo.yaml
+cat << EOF > demo1234.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo
+  name: demo1234
   labels:
-    app: demo
+    app: demo1234
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: demo
+      app: demo1234
   template:
     metadata:
       labels:
-        app: demo
+        app: demo1234
     spec:
       containers:
-      - name: demo
+      - name: demo1234
         image: quay.io/songleo/hostname
         imagePullPolicy: Always
         env:
