@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cat << EOF > demo1234.yaml
+cat << EOF > demo.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
