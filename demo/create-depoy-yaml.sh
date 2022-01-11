@@ -1,5 +1,5 @@
 #!/bin/sh
-
+kubectl get pods
 cat << EOF > demo.yaml
 apiVersion: apps/v1
 kind: Deployment
