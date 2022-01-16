@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana-dev
+  namespace: argocd
+spec:
+  destination:
+    namespace: open-cluster-management-observability
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: grafana-dev
+    repoURL: 'https://github.com/songleo/grafana-dev-gitops.git'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated: null
+    syncOptions:
+      - CreateNamespace=true
+

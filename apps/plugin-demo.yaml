@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: hostname
+  namespace: argocd
+spec:
+  destination:
+    name: ''
+    namespace: default
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: hostname
+    repoURL: 'https://github.com/songleo/argocd-demo.git'
+    targetRevision: HEAD
+    plugin:
+      name: updateReplicas
+  project: default
+  syncPolicy:
+    automated: {}
