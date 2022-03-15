@@ -57,4 +57,3 @@ groups:
     for: 5m
     labels:
       severity: warning
-      test: ssli-test
