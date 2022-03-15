@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: alerts
+  namespace: argocd
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: alerts/base
+    repoURL: https://github.com/songleo/argocd-demo.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated: {}
