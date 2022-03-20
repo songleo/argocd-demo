@@ -5,12 +5,14 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: default
+    namespace: argocd
     server: https://kubernetes.default.svc
   project: default
   source:
     path: vault
     repoURL: https://github.com/songleo/argocd-demo.git
     targetRevision: HEAD
+    plugin:
+      name: argocd-vault-plugin
   syncPolicy:
     automated: {}
