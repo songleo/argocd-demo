@@ -1,6 +1,14 @@
 groups:
-- name: AAP-Health
+- name: aap-health
   rules:
+  - alert: AutomationControllerResponseError
+    annotations:
+      description: AAP controller in {{$labels.namespace}} response error (status="500") is more than 3 over 1 minutes
+      summary: AAP controller in {{$labels.namespace}} response error
+    expr: automation_controller_response_total{status="500"} > 3
+    for: 1m
+    labels:
+      severity: warning
   - alert: AAPPodRestartingTooMuch
     annotations:
       description: AAP Pod in {{$labels.namespace}} restart more than 10 times over 10 minutes
