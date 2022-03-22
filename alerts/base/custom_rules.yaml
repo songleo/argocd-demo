@@ -1,5 +1,5 @@
 groups:
-- name: aap-health
+- name: AAP-Health
   rules:
   - alert: AAPPodRestartingTooMuch
     annotations:
