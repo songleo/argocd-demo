@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alertmanager-to-github
+spec:
+  template:
+    spec:
+      containers:
+      - name: alertmanager-to-github
+        args:
+        - --labels="azure"
+        - --labels="stage"
+        - --labels="auto-created"
