@@ -9,6 +9,6 @@ spec:
       - name: alertmanager-to-github
         args:
         - start
-        - --labels="azure"
-        - --labels="stage"
-        - --labels="auto-created"
+        - --labels=azure
+        - --labels=stage
+        - --labels=auto-created
