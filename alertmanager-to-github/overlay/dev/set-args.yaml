@@ -8,6 +8,7 @@ spec:
       containers:
       - name: alertmanager-to-github
         args:
+        - start
         - --labels="azure"
         - --labels="dev"
         - --labels="auto-created"
