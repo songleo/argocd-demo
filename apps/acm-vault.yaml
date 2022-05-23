@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: acm-vault
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: openshift-gitops
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: acm-vault
+    repoURL: https://github.com/songleo/argocd-demo.git
+    targetRevision: HEAD
+    plugin:
+      name: argocd-vault-plugin-kustomize
+  syncPolicy:
+    automated: {}
