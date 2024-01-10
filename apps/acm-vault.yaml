@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: acm-vault
+  name: acm-vault-test
   namespace: openshift-gitops
 spec:
   destination:
